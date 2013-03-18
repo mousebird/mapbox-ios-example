@@ -8,12 +8,9 @@
 
 #import "InteractiveLayerViewController.h"
 
-#import "RMMapView.h"
-#import "RMMapBoxSource.h"
-#import "RMMBTilesSource.h"
-#import "RMInteractiveSource.h"
-
 #import <QuartzCore/QuartzCore.h>
+
+#import "NSData+Base64.h"
 
 @implementation InteractiveLayerViewController
 
@@ -21,7 +18,7 @@
 {
     [super viewDidLoad];
 
-    RMMapBoxSource *interactiveSource = [[RMMapBoxSource alloc] initWithReferenceURL:[NSURL URLWithString:@"http://a.tiles.mapbox.com/v3/mapbox.geography-class.json"]];
+    RMMapBoxSource *interactiveSource = [[RMMapBoxSource alloc] initWithMapID:@"examples.map-zmy97flj"];
 
     RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:interactiveSource];
 
@@ -29,13 +26,9 @@
     
     mapView.zoom = 2;
     
-    mapView.backgroundColor = [UIColor darkGrayColor];
-    
-    mapView.decelerationMode = RMMapDecelerationFast;
+    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
-    mapView.boundingMask = RMMapMinHeightBound;
-
-    mapView.adjustTilesForRetinaDisplay = YES;
+    mapView.adjustTilesForRetinaDisplay = YES; // these tiles aren't designed specifically for retina, so make them legible
     
     [self.view addSubview:mapView];
 }
@@ -44,49 +37,58 @@
 
 - (void)singleTapOnMap:(RMMapView *)mapView at:(CGPoint)point
 {
-    id source = mapView.tileSource;
-    
-    if ([source conformsToProtocol:@protocol(RMInteractiveSource)] && [(id <RMInteractiveSource>)source supportsInteractivity])
+    [mapView removeAllAnnotations];
+
+    RMMBTilesSource *source = (RMMBTilesSource *)mapView.tileSource;
+
+    if ([source conformsToProtocol:@protocol(RMInteractiveSource)] && [source supportsInteractivity])
     {
-        source = (id <RMInteractiveSource>)source;
-        
-        NSString *formattedOutput = [source formattedOutputOfType:RMInteractiveSourceOutputTypeFull 
+        NSString *formattedOutput = [source formattedOutputOfType:RMInteractiveSourceOutputTypeTeaser
                                                          forPoint:point 
                                                         inMapView:mapView];
-        
-        if ( ! formattedOutput || ! [formattedOutput length])
-            formattedOutput = [source formattedOutputOfType:RMInteractiveSourceOutputTypeTeaser 
-                                                   forPoint:point 
-                                                  inMapView:mapView];
-        
+
         if (formattedOutput && [formattedOutput length])
         {
-            CGRect frame = CGRectMake(mapView.frame.size.width - 200, 0, 200, 140);
-            
-            UIWebView *webView = [[UIWebView alloc] initWithFrame:frame];
-            
-            [webView loadHTMLString:formattedOutput baseURL:nil];
-            
-            webView.layer.borderColor = [[UIColor blackColor] CGColor];
-            webView.layer.borderWidth = 2.0;
-            
-            webView.userInteractionEnabled = NO;
-            
-            [self.view addSubview:webView];
-            
-            [UIView animateWithDuration:1.0
-                                  delay:0.5
-                                options:UIViewAnimationCurveEaseOut
-                             animations:^(void)
-                             {
-                                 webView.alpha = 0.0;
-                             }
-                             completion:^(BOOL finished)
-                             {
-                                 [webView removeFromSuperview];
-                             }];
+            // parse the country name out of the content
+            //
+            NSUInteger startOfCountryName = [formattedOutput rangeOfString:@"<strong>"].location + [@"<strong>" length];
+            NSUInteger endOfCountryName   = [formattedOutput rangeOfString:@"</strong>"].location;
+
+            NSString *countryName = [formattedOutput substringWithRange:NSMakeRange(startOfCountryName, endOfCountryName - startOfCountryName)];
+
+            // parse the flag image out of the content
+            //
+            NSUInteger startOfFlagImage = [formattedOutput rangeOfString:@"base64,"].location + [@"base64," length];
+            NSUInteger endOfFlagImage   = [formattedOutput rangeOfString:@"\" style"].location;
+
+            UIImage *flagImage = [UIImage imageWithData:[NSData dataFromBase64String:[formattedOutput substringWithRange:NSMakeRange(startOfFlagImage, endOfFlagImage)]]];
+
+            RMAnnotation *annotation = [RMAnnotation annotationWithMapView:mapView coordinate:[mapView pixelToCoordinate:point] andTitle:countryName];
+
+            annotation.userInfo = flagImage;
+
+            [mapView addAnnotation:annotation];
+
+            [mapView selectAnnotation:annotation animated:YES];
         }
     }
+}
+
+- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+{
+    RMMarker *marker = [[RMMarker alloc] initWithMapBoxMarkerImage:@"embassy"];
+
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 32)];
+
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+
+    imageView.image = annotation.userInfo;
+
+    marker.leftCalloutAccessoryView = imageView;
+
+    marker.canShowCallout = YES;
+
+    return marker;
 }
 
 @end

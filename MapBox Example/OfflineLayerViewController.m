@@ -8,8 +8,7 @@
 
 #import "OfflineLayerViewController.h"
 
-#import "RMMapView.h"
-#import "RMMBTilesSource.h"
+#import "MapBox.h"
 
 @implementation OfflineLayerViewController
 
@@ -17,19 +16,15 @@
 {
     [super viewDidLoad];
 
-    RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"control-room-0.2.0" ofType:@"mbtiles"]]];
+    RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetResource:@"control-room-0.2.0" ofType:@"mbtiles"];
 
     RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:offlineSource];
     
     mapView.zoom = 2;
     
-    mapView.backgroundColor = [UIColor darkGrayColor];
-    
-    mapView.decelerationMode = RMMapDecelerationFast;
+    mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
 
-    mapView.boundingMask = RMMapMinHeightBound;
-
-    mapView.adjustTilesForRetinaDisplay = YES;
+    mapView.adjustTilesForRetinaDisplay = YES; // these tiles aren't designed specifically for retina, so make them legible
     
     [self.view addSubview:mapView];
 }

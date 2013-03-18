@@ -8,10 +8,14 @@
 
 #import "OnlineLayerViewController.h"
 
-#import "RMMapView.h"
-#import "RMMapBoxSource.h"
+#import "MapBox.h"
+
+#define kNormalMapID @"examples.map-z2effxa8"
+#define kRetinaMapID @"examples.map-zswgei2n"
 
 #import <CoreLocation/CoreLocation.h>
+
+#define kTintColor [UIColor colorWithRed:0.120 green:0.550 blue:0.670 alpha:1.000]
 
 @interface OnlineLayerViewController ()
 
@@ -40,25 +44,20 @@
     self.searchBar.placeholder = @"123 Fifth Avenue Anytown, USA";
     
     self.searchBar.delegate = self;
+
+    self.searchBar.tintColor = kTintColor;
     
     [self.view addSubview:searchBar];
     
     // map view
     //
-    RMMapBoxSource *onlineSource = [[RMMapBoxSource alloc] initWithReferenceURL:[NSURL URLWithString:@"http://a.tiles.mapbox.com/v3/mapbox.mapbox-streets.json"]];
+    RMMapBoxSource *onlineSource = [[RMMapBoxSource alloc] initWithMapID:(([[UIScreen mainScreen] scale] > 1.0) ? kRetinaMapID : kNormalMapID)];
 
     self.mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, self.searchBar.bounds.size.height, self.view.bounds.size.width, self.view.bounds.size.height - self.searchBar.bounds.size.height) andTilesource:onlineSource];
     
     self.mapView.zoom = 2;
     
-    self.mapView.backgroundColor = [UIColor darkGrayColor];
-    
-    self.mapView.decelerationMode = RMMapDecelerationFast;
-    
-    self.mapView.boundingMask = RMMapMinHeightBound;
-
-    self.mapView.adjustTilesForRetinaDisplay = YES;
-    
+    self.mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:self.mapView];
     
     // tap gesture on map to dismiss search
@@ -88,6 +87,8 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar
 {
+    [self.mapView removeAllAnnotations];
+
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 
     [aSearchBar resignFirstResponder];
@@ -109,12 +110,18 @@
             CLPlacemark *firstPlacemark = [placemarks objectAtIndex:0];
             
             RMProjectedPoint projectedCenter = [self.mapView coordinateToProjectedPoint:firstPlacemark.location.coordinate];
-            
+
             [self.mapView setProjectedBounds:RMProjectedRectMake(projectedCenter.x - (firstPlacemark.region.radius / 2), 
                                                                  projectedCenter.y - (firstPlacemark.region.radius / 2), 
                                                                  firstPlacemark.region.radius, 
                                                                  firstPlacemark.region.radius) 
                                     animated:NO];
+
+            RMPointAnnotation *annotation = [RMPointAnnotation annotationWithMapView:self.mapView coordinate:self.mapView.centerCoordinate andTitle:[[firstPlacemark valueForKeyPath:@"addressDictionary.FormattedAddressLines"] componentsJoinedByString:@", "]];
+
+            [self.mapView addAnnotation:annotation];
+
+            [self.mapView selectAnnotation:annotation animated:YES];
         }
     }];
 }

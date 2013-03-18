@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD227A011551969500E73845 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD227A001551969500E73845 /* CoreLocation.framework */; };
+		DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */; };
 		DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BF10152E455500089409 /* libz.dylib */; };
-		DDC4BEA8152E300800089409 /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapView.a */; };
+		DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapBox.a */; };
+		DD97C05716485EE9007C4652 /* MapBox.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD97C05416485E46007C4652 /* MapBox.bundle */; };
+		DD9BFE28160140520011F174 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD9BFE27160140520011F174 /* Default-568h@2x.png */; };
+		DDA6DFBF16A6364F00D373D8 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DDA6DFBD16A6364F00D373D8 /* NSData+Base64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		DDC4BEC1152E351F00089409 /* online.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC4BEBF152E351F00089409 /* online.png */; };
 		DDC4BEC2152E351F00089409 /* online@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC4BEC0152E351F00089409 /* online@2x.png */; };
 		DDC4BEC6152E366800089409 /* OfflineLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4BEC5152E366800089409 /* OfflineLayerViewController.m */; };
@@ -20,6 +23,8 @@
 		DDC4BED0152E38D200089409 /* interactive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDC4BECE152E38D200089409 /* interactive@2x.png */; };
 		DDC4BEF1152E3EEE00089409 /* InteractiveLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4BEEF152E3EEE00089409 /* InteractiveLayerViewController.m */; };
 		DDC4BF12152E457A00089409 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEF3A6E1522848500DE6DB0 /* libsqlite3.dylib */; };
+		DDD9E7A815912CA700F29679 /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD9E7A615912CA700F29679 /* icon@2x.png */; };
+		DDD9E7A915912CA700F29679 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DDD9E7A715912CA700F29679 /* icon.png */; };
 		DDEF3A2E1522813600DE6DB0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEF3A2D1522813600DE6DB0 /* UIKit.framework */; };
 		DDEF3A301522813600DE6DB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEF3A2F1522813600DE6DB0 /* Foundation.framework */; };
 		DDEF3A321522813600DE6DB0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDEF3A311522813600DE6DB0 /* CoreGraphics.framework */; };
@@ -31,19 +36,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DD97C05316485E46007C4652 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD96557015264A080008517A /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DD6A83751644A20C0097F31F;
+			remoteInfo = Resources;
+		};
 		DDC4BEA2152E2FDE00089409 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD96557015264A080008517A /* MapView.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 17F31EFA1331050A00122B16;
 			remoteInfo = MapView;
-		};
-		DDC4BEA4152E2FDE00089409 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD96557015264A080008517A /* MapView.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2BF3078F0F8AC5C0007014EE;
-			remoteInfo = "Unit Tests";
 		};
 		DDC4BEA6152E300400089409 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -55,8 +60,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DD227A001551969500E73845 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DD96557015264A080008517A /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "MapBox-iOS-SDK/MapView/MapView.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		DD9BFE27160140520011F174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		DDA6DFBD16A6364F00D373D8 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		DDA6DFBE16A6364F00D373D8 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		DDC4BEBF152E351F00089409 /* online.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = online.png; sourceTree = "<group>"; };
 		DDC4BEC0152E351F00089409 /* online@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "online@2x.png"; sourceTree = "<group>"; };
 		DDC4BEC4152E366800089409 /* OfflineLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfflineLayerViewController.h; sourceTree = "<group>"; };
@@ -69,6 +77,8 @@
 		DDC4BEEF152E3EEE00089409 /* InteractiveLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractiveLayerViewController.m; sourceTree = "<group>"; };
 		DDC4BEF0152E3EEE00089409 /* InteractiveLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveLayerViewController.h; sourceTree = "<group>"; };
 		DDC4BF10152E455500089409 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		DDD9E7A615912CA700F29679 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		DDD9E7A715912CA700F29679 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		DDEF3A291522813600DE6DB0 /* MB Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MB Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEF3A2D1522813600DE6DB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDEF3A2F1522813600DE6DB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -91,11 +101,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDEF3A321522813600DE6DB0 /* CoreGraphics.framework in Frameworks */,
-				DD227A011551969500E73845 /* CoreLocation.framework in Frameworks */,
+				DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */,
 				DDEF3A301522813600DE6DB0 /* Foundation.framework in Frameworks */,
 				DDEF3A6D1522847A00DE6DB0 /* QuartzCore.framework in Frameworks */,
 				DDEF3A2E1522813600DE6DB0 /* UIKit.framework in Frameworks */,
-				DDC4BEA8152E300800089409 /* libMapView.a in Frameworks */,
+				DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */,
 				DDC4BF12152E457A00089409 /* libsqlite3.dylib in Frameworks */,
 				DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */,
 			);
@@ -113,11 +123,21 @@
 			path = "MapBox Example";
 			sourceTree = "<group>";
 		};
+		DDA6DFC016A636BC00D373D8 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DDA6DFBE16A6364F00D373D8 /* NSData+Base64.h */,
+				DDA6DFBD16A6364F00D373D8 /* NSData+Base64.m */,
+			);
+			name = Categories;
+			path = "MapBox Example";
+			sourceTree = "<group>";
+		};
 		DDC4BE9C152E2FDE00089409 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDC4BEA3152E2FDE00089409 /* libMapView.a */,
-				DDC4BEA5152E2FDE00089409 /* RM Unit Tests.app */,
+				DDC4BEA3152E2FDE00089409 /* libMapBox.a */,
+				DD97C05416485E46007C4652 /* MapBox.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,20 +145,27 @@
 		DDC4BEC3152E356F00089409 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DDC4BECB152E380900089409 /* control-room-0.2.0.mbtiles */,
 				DDC4BEBF152E351F00089409 /* online.png */,
 				DDC4BEC0152E351F00089409 /* online@2x.png */,
 				DDC4BEC7152E36FF00089409 /* offline.png */,
 				DDC4BEC8152E36FF00089409 /* offline@2x.png */,
 				DDC4BECD152E38D200089409 /* interactive.png */,
 				DDC4BECE152E38D200089409 /* interactive@2x.png */,
+				DDD9E7A715912CA700F29679 /* icon.png */,
+				DDD9E7A615912CA700F29679 /* icon@2x.png */,
+				DD9BFE27160140520011F174 /* Default-568h@2x.png */,
 			);
 			name = Resources;
+			path = "MapBox Example";
 			sourceTree = "<group>";
 		};
 		DDEF3A1E1522813600DE6DB0 = {
 			isa = PBXGroup;
 			children = (
 				DDEF3A331522813600DE6DB0 /* MapBox Example */,
+				DDC4BEC3152E356F00089409 /* Resources */,
+				DDA6DFC016A636BC00D373D8 /* Categories */,
 				DD96556F152649F10008517A /* MapBox SDK */,
 				DDEF3A2C1522813600DE6DB0 /* Frameworks */,
 				DDEF3A2A1522813600DE6DB0 /* Products */,
@@ -157,7 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				DDEF3A311522813600DE6DB0 /* CoreGraphics.framework */,
-				DD227A001551969500E73845 /* CoreLocation.framework */,
+				DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */,
 				DDEF3A2F1522813600DE6DB0 /* Foundation.framework */,
 				DDEF3A6C1522847A00DE6DB0 /* QuartzCore.framework */,
 				DDEF3A2D1522813600DE6DB0 /* UIKit.framework */,
@@ -178,7 +205,6 @@
 				DDC4BEC5152E366800089409 /* OfflineLayerViewController.m */,
 				DDC4BEF0152E3EEE00089409 /* InteractiveLayerViewController.h */,
 				DDC4BEEF152E3EEE00089409 /* InteractiveLayerViewController.m */,
-				DDC4BEC3152E356F00089409 /* Resources */,
 				DDEF3A341522813600DE6DB0 /* Supporting Files */,
 			);
 			path = "MapBox Example";
@@ -191,7 +217,6 @@
 				DDEF3A361522813600DE6DB0 /* InfoPlist.strings */,
 				DDEF3A391522813600DE6DB0 /* main.m */,
 				DDEF3A3B1522813600DE6DB0 /* MapBox Example-Prefix.pch */,
-				DDC4BECB152E380900089409 /* control-room-0.2.0.mbtiles */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -223,7 +248,7 @@
 		DDEF3A201522813600DE6DB0 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "MapBox / Development Seed";
 			};
 			buildConfigurationList = DDEF3A231522813600DE6DB0 /* Build configuration list for PBXProject "MapBox Example" */;
@@ -250,18 +275,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		DDC4BEA3152E2FDE00089409 /* libMapView.a */ = {
+		DD97C05416485E46007C4652 /* MapBox.bundle */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libMapView.a;
-			remoteRef = DDC4BEA2152E2FDE00089409 /* PBXContainerItemProxy */;
+			fileType = wrapper.cfbundle;
+			path = MapBox.bundle;
+			remoteRef = DD97C05316485E46007C4652 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		DDC4BEA5152E2FDE00089409 /* RM Unit Tests.app */ = {
+		DDC4BEA3152E2FDE00089409 /* libMapBox.a */ = {
 			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = "RM Unit Tests.app";
-			remoteRef = DDC4BEA4152E2FDE00089409 /* PBXContainerItemProxy */;
+			fileType = archive.ar;
+			path = libMapBox.a;
+			remoteRef = DDC4BEA2152E2FDE00089409 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -279,6 +304,10 @@
 				DDC4BECC152E380900089409 /* control-room-0.2.0.mbtiles in Resources */,
 				DDC4BECF152E38D200089409 /* interactive.png in Resources */,
 				DDC4BED0152E38D200089409 /* interactive@2x.png in Resources */,
+				DDD9E7A815912CA700F29679 /* icon@2x.png in Resources */,
+				DDD9E7A915912CA700F29679 /* icon.png in Resources */,
+				DD9BFE28160140520011F174 /* Default-568h@2x.png in Resources */,
+				DD97C05716485EE9007C4652 /* MapBox.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +323,7 @@
 				DDEF3A411522813600DE6DB0 /* OnlineLayerViewController.m in Sources */,
 				DDC4BEC6152E366800089409 /* OfflineLayerViewController.m in Sources */,
 				DDC4BEF1152E3EEE00089409 /* InteractiveLayerViewController.m in Sources */,
+				DDA6DFBF16A6364F00D373D8 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,9 +353,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Development Seed";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -334,7 +367,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "10B578F6-1C0D-41A8-B143-5B08B623A2AF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -351,6 +384,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "MB Example";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = "Ad Hoc";
@@ -359,8 +393,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -384,8 +421,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -410,6 +450,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "MB Example";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -424,6 +465,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "MB Example";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
