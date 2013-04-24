@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35EEC67C17220BD7001F98AB /* mapnik-ios.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 35EEC67B17220BD7001F98AB /* mapnik-ios.xcconfig */; };
 		DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */; };
 		DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BF10152E455500089409 /* libz.dylib */; };
 		DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapBox.a */; };
@@ -61,7 +60,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35EEC67B17220BD7001F98AB /* mapnik-ios.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "mapnik-ios.xcconfig"; sourceTree = SOURCE_ROOT; };
 		DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DD96557015264A080008517A /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "MapBox-iOS-SDK/MapView/MapView.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DD9BFE27160140520011F174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 		DDEF3A341522813600DE6DB0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				35EEC67B17220BD7001F98AB /* mapnik-ios.xcconfig */,
 				DDEF3A351522813600DE6DB0 /* MapBox Example-Info.plist */,
 				DDEF3A361522813600DE6DB0 /* InfoPlist.strings */,
 				DDEF3A391522813600DE6DB0 /* main.m */,
@@ -311,7 +308,6 @@
 				DDD9E7A915912CA700F29679 /* icon.png in Resources */,
 				DD9BFE28160140520011F174 /* Default-568h@2x.png in Resources */,
 				DD97C05716485EE9007C4652 /* MapBox.bundle in Resources */,
-				35EEC67C17220BD7001F98AB /* mapnik-ios.xcconfig in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +394,6 @@
 		};
 		DDEF3A451522813600DE6DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35EEC67B17220BD7001F98AB /* mapnik-ios.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -427,7 +422,6 @@
 		};
 		DDEF3A461522813600DE6DB0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35EEC67B17220BD7001F98AB /* mapnik-ios.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
