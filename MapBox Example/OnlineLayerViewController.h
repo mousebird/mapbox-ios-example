@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface OnlineLayerViewController : UIViewController
+@interface OnlineLayerViewController : BaseViewController
 
 @end

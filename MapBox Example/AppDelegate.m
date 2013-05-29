@@ -8,41 +8,26 @@
 
 #import "AppDelegate.h"
 
-#import "OnlineLayerViewController.h"
-#import "OfflineLayerViewController.h"
-#import "InteractiveLayerViewController.h"
+#import "ComparisonViewController.h"
 
 @implementation AppDelegate
+{
+    UINavigationController *navC;
+}
 
 @synthesize window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    self.window.backgroundColor = [UIColor whiteColor];
     
-    NSMutableArray *viewControllers = [NSMutableArray array];
-    
-    for (NSString *typeString in [NSArray arrayWithObjects:@"online", @"offline", @"interactive", nil])
-    {
-        Class ViewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@LayerViewController", [typeString capitalizedString]]);
-        
-        UIViewController *viewController = [[ViewControllerClass alloc] initWithNibName:nil bundle:nil];
-        
-        viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ Layer", [typeString capitalizedString]]
-                                                                  image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", typeString]] 
-                                                                    tag:0];
-        
-        [viewControllers addObject:viewController];
-    }
-    
-    tabBarController.viewControllers = viewControllers;
-    
-    self.window.rootViewController = tabBarController;
+    ComparisonViewController *startViewC = [[ComparisonViewController alloc] init];
+    navC = [[UINavigationController alloc] initWithRootViewController:startViewC];
+    navC.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    self.window.rootViewController = navC;
     
     [self.window makeKeyAndVisible];
-    
     return YES;
 }
 

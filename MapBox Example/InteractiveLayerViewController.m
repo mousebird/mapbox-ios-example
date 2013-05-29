@@ -13,39 +13,51 @@
 #import "NSData+Base64.h"
 
 @implementation InteractiveLayerViewController
+{
+    RMMapView *mapView;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
     RMMapBoxSource *interactiveSource = [[RMMapBoxSource alloc] initWithMapID:@"examples.map-zmy97flj"];
-
-    RMMapView *mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:interactiveSource];
-
+    
+    mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:interactiveSource maplyMode:(self.renderingMode != RouteMeModeOld)];
+    
     mapView.delegate = self;
     
     mapView.zoom = 2;
     
     mapView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-
+    
     mapView.adjustTilesForRetinaDisplay = YES; // these tiles aren't designed specifically for retina, so make them legible
     
     [self.view addSubview:mapView];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [mapView removeFromSuperview];
+    mapView = nil;
+}
+
 #pragma mark -
 
-- (void)singleTapOnMap:(RMMapView *)mapView at:(CGPoint)point
+- (void)singleTapOnMap:(RMMapView *)theMapView at:(CGPoint)point
 {
-    [mapView removeAllAnnotations];
+    [theMapView removeAllAnnotations];
 
-    RMMBTilesSource *source = (RMMBTilesSource *)mapView.tileSource;
+    RMMBTilesSource *source = (RMMBTilesSource *)theMapView.tileSource;
 
     if ([source conformsToProtocol:@protocol(RMInteractiveSource)] && [source supportsInteractivity])
     {
         NSString *formattedOutput = [source formattedOutputOfType:RMInteractiveSourceOutputTypeTeaser
                                                          forPoint:point 
-                                                        inMapView:mapView];
+                                                        inMapView:theMapView];
 
         if (formattedOutput && [formattedOutput length])
         {
@@ -63,18 +75,18 @@
 
             UIImage *flagImage = [UIImage imageWithData:[NSData dataFromBase64String:[formattedOutput substringWithRange:NSMakeRange(startOfFlagImage, endOfFlagImage)]]];
 
-            RMAnnotation *annotation = [RMAnnotation annotationWithMapView:mapView coordinate:[mapView pixelToCoordinate:point] andTitle:countryName];
+            RMAnnotation *annotation = [RMAnnotation annotationWithMapView:theMapView coordinate:[theMapView pixelToCoordinate:point] andTitle:countryName];
 
             annotation.userInfo = flagImage;
 
-            [mapView addAnnotation:annotation];
+            [theMapView addAnnotation:annotation];
 
-            [mapView selectAnnotation:annotation animated:YES];
+            [theMapView selectAnnotation:annotation animated:YES];
         }
     }
 }
 
-- (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation
+- (RMMapLayer *)mapView:(RMMapView *)theMapView layerForAnnotation:(RMAnnotation *)annotation
 {
     RMMarker *marker = [[RMMarker alloc] initWithMapBoxMarkerImage:@"embassy"];
 

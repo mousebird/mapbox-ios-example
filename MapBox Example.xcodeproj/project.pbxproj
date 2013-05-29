@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B472FEF1731B740000507E9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B472FEE1731B740000507E9 /* CoreText.framework */; };
+		2B472FF21731B74E000507E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B472FF11731B74E000507E9 /* OpenGLES.framework */; };
+		2B472FF41731B77C000507E9 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B472FF31731B77C000507E9 /* libstdc++.dylib */; };
+		2B627A151756639A00284366 /* ComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B627A141756639A00284366 /* ComparisonViewController.m */; };
+		2B627A1B1756657600284366 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B627A1A1756657600284366 /* BaseViewController.m */; };
 		DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */; };
 		DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BF10152E455500089409 /* libz.dylib */; };
 		DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapBox.a */; };
@@ -60,6 +65,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B472FEE1731B740000507E9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		2B472FF11731B74E000507E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2B472FF31731B77C000507E9 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		2B627A131756639A00284366 /* ComparisonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComparisonViewController.h; sourceTree = "<group>"; };
+		2B627A141756639A00284366 /* ComparisonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonViewController.m; sourceTree = "<group>"; };
+		2B627A191756657600284366 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		2B627A1A1756657600284366 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DD96557015264A080008517A /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "MapBox-iOS-SDK/MapView/MapView.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DD9BFE27160140520011F174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -79,7 +91,7 @@
 		DDC4BF10152E455500089409 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		DDD9E7A615912CA700F29679 /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
 		DDD9E7A715912CA700F29679 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		DDEF3A291522813600DE6DB0 /* MB Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MB Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDEF3A291522813600DE6DB0 /* routemetest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = routemetest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDEF3A2D1522813600DE6DB0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DDEF3A2F1522813600DE6DB0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DDEF3A311522813600DE6DB0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -100,7 +112,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B472FF41731B77C000507E9 /* libstdc++.dylib in Frameworks */,
+				2B472FF21731B74E000507E9 /* OpenGLES.framework in Frameworks */,
 				DDEF3A321522813600DE6DB0 /* CoreGraphics.framework in Frameworks */,
+				2B472FEF1731B740000507E9 /* CoreText.framework in Frameworks */,
 				DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */,
 				DDEF3A301522813600DE6DB0 /* Foundation.framework in Frameworks */,
 				DDEF3A6D1522847A00DE6DB0 /* QuartzCore.framework in Frameworks */,
@@ -163,6 +178,9 @@
 		DDEF3A1E1522813600DE6DB0 = {
 			isa = PBXGroup;
 			children = (
+				2B472FF31731B77C000507E9 /* libstdc++.dylib */,
+				2B472FF11731B74E000507E9 /* OpenGLES.framework */,
+				2B472FEE1731B740000507E9 /* CoreText.framework */,
 				DDEF3A331522813600DE6DB0 /* MapBox Example */,
 				DDC4BEC3152E356F00089409 /* Resources */,
 				DDA6DFC016A636BC00D373D8 /* Categories */,
@@ -175,7 +193,7 @@
 		DDEF3A2A1522813600DE6DB0 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DDEF3A291522813600DE6DB0 /* MB Example.app */,
+				DDEF3A291522813600DE6DB0 /* routemetest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -199,12 +217,16 @@
 			children = (
 				DDEF3A3C1522813600DE6DB0 /* AppDelegate.h */,
 				DDEF3A3D1522813600DE6DB0 /* AppDelegate.m */,
+				2B627A191756657600284366 /* BaseViewController.h */,
+				2B627A1A1756657600284366 /* BaseViewController.m */,
 				DDEF3A3F1522813600DE6DB0 /* OnlineLayerViewController.h */,
 				DDEF3A401522813600DE6DB0 /* OnlineLayerViewController.m */,
 				DDC4BEC4152E366800089409 /* OfflineLayerViewController.h */,
 				DDC4BEC5152E366800089409 /* OfflineLayerViewController.m */,
 				DDC4BEF0152E3EEE00089409 /* InteractiveLayerViewController.h */,
 				DDC4BEEF152E3EEE00089409 /* InteractiveLayerViewController.m */,
+				2B627A131756639A00284366 /* ComparisonViewController.h */,
+				2B627A141756639A00284366 /* ComparisonViewController.m */,
 				DDEF3A341522813600DE6DB0 /* Supporting Files */,
 			);
 			path = "MapBox Example";
@@ -239,7 +261,7 @@
 			);
 			name = "MapBox Example";
 			productName = "MapBox Example";
-			productReference = DDEF3A291522813600DE6DB0 /* MB Example.app */;
+			productReference = DDEF3A291522813600DE6DB0 /* routemetest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -324,6 +346,8 @@
 				DDC4BEC6152E366800089409 /* OfflineLayerViewController.m in Sources */,
 				DDC4BEF1152E3EEE00089409 /* InteractiveLayerViewController.m in Sources */,
 				DDA6DFBF16A6364F00D373D8 /* NSData+Base64.m in Sources */,
+				2B627A151756639A00284366 /* ComparisonViewController.m in Sources */,
+				2B627A1B1756657600284366 /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,14 +403,15 @@
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/**";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"";
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				KEEP_PRIVATE_EXTERNS = YES;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "MB Example";
+				PRODUCT_NAME = routemetest;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -438,6 +463,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -448,15 +474,16 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/**";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"";
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				KEEP_PRIVATE_EXTERNS = YES;
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "MB Example";
+				PRODUCT_NAME = routemetest;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -467,15 +494,16 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/**";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"";
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				KEEP_PRIVATE_EXTERNS = YES;
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "MB Example";
+				PRODUCT_NAME = routemetest;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

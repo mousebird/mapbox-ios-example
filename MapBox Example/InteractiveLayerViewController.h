@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "MapBox.h"
+#import "BaseViewController.h"
 
-@interface InteractiveLayerViewController : UIViewController <RMMapViewDelegate>
+@interface InteractiveLayerViewController : BaseViewController <RMMapViewDelegate>
 
 @end
