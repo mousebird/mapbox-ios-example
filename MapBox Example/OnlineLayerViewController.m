@@ -27,7 +27,7 @@
 {
     RMMapBoxSource *onlineSource = [[RMMapBoxSource alloc] initWithMapID:(([[UIScreen mainScreen] scale] > 1.0) ? kRetinaMapID : kNormalMapID)];
     
-    mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:onlineSource maplyMode:(self.renderingMode != RouteMeModeOld)];
+    mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:onlineSource maplyMode:(RMMaplyMode)self.renderingMode];
     
     mapView.zoom = 2;
     

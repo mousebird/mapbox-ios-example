@@ -26,7 +26,7 @@
 {
     RMMapBoxSource *interactiveSource = [[RMMapBoxSource alloc] initWithMapID:@"examples.map-zmy97flj"];
     
-    mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:interactiveSource maplyMode:(self.renderingMode != RouteMeModeOld)];
+    mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:interactiveSource maplyMode:(RMMaplyMode)self.renderingMode];
     
     mapView.delegate = self;
     

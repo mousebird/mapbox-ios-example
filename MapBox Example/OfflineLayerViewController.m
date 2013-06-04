@@ -25,7 +25,7 @@
 {
     RMMBTilesSource *offlineSource = [[RMMBTilesSource alloc] initWithTileSetResource:@"control-room-0.2.0" ofType:@"mbtiles"];
     
-    mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:offlineSource maplyMode:(self.renderingMode != RouteMeModeOld)];
+    mapView = [[RMMapView alloc] initWithFrame:self.view.bounds andTilesource:offlineSource maplyMode:(RMMaplyMode)self.renderingMode];
     
     mapView.zoom = 2;
     

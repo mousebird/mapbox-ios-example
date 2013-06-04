@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 // The rendering mode we want.  This is either old or new.
-typedef enum {RouteMeModeOld,RouteMeModeMaply} RouteMeRenderingMode;
+typedef enum {RouteMeModeOld,RouteMeModeMaply,RouteMeModeMaplySources} RouteMeRenderingMode;
 
 @interface BaseViewController : UIViewController
 

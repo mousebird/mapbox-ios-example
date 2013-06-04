@@ -12,6 +12,13 @@
 		2B472FF41731B77C000507E9 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B472FF31731B77C000507E9 /* libstdc++.dylib */; };
 		2B627A151756639A00284366 /* ComparisonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B627A141756639A00284366 /* ComparisonViewController.m */; };
 		2B627A1B1756657600284366 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B627A1A1756657600284366 /* BaseViewController.m */; };
+		2B6F715C175E98970043A8A6 /* ShapeLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F715B175E98960043A8A6 /* ShapeLayerViewController.m */; };
+		2B6F7162175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.dbf in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F715E175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.dbf */; };
+		2B6F7163175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shp in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F715F175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shp */; };
+		2B6F7164175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shx in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7160175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shx */; };
+		2B6F7165175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7161175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj */; };
+		2B6F7167175EABAF0043A8A6 /* shape.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7166175EABAF0043A8A6 /* shape.png */; };
+		2B6F7169175EAE300043A8A6 /* shape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7168175EAE300043A8A6 /* shape@2x.png */; };
 		DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */; };
 		DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BF10152E455500089409 /* libz.dylib */; };
 		DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapBox.a */; };
@@ -72,6 +79,14 @@
 		2B627A141756639A00284366 /* ComparisonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComparisonViewController.m; sourceTree = "<group>"; };
 		2B627A191756657600284366 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		2B627A1A1756657600284366 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		2B6F715A175E98960043A8A6 /* ShapeLayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeLayerViewController.h; sourceTree = "<group>"; };
+		2B6F715B175E98960043A8A6 /* ShapeLayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeLayerViewController.m; sourceTree = "<group>"; };
+		2B6F715E175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.dbf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_110m_admin_0_map_units.dbf; sourceTree = "<group>"; };
+		2B6F715F175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shp */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_110m_admin_0_map_units.shp; sourceTree = "<group>"; };
+		2B6F7160175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shx */ = {isa = PBXFileReference; lastKnownFileType = file; path = ne_110m_admin_0_map_units.shx; sourceTree = "<group>"; };
+		2B6F7161175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ne_110m_admin_0_map_units.prj; sourceTree = "<group>"; };
+		2B6F7166175EABAF0043A8A6 /* shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shape.png; sourceTree = "<group>"; };
+		2B6F7168175EAE300043A8A6 /* shape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape@2x.png"; sourceTree = "<group>"; };
 		DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DD96557015264A080008517A /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "MapBox-iOS-SDK/MapView/MapView.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DD9BFE27160140520011F174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -160,6 +175,12 @@
 		DDC4BEC3152E356F00089409 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2B6F7168175EAE300043A8A6 /* shape@2x.png */,
+				2B6F7166175EABAF0043A8A6 /* shape.png */,
+				2B6F715E175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.dbf */,
+				2B6F715F175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shp */,
+				2B6F7160175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shx */,
+				2B6F7161175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj */,
 				DDC4BECB152E380900089409 /* control-room-0.2.0.mbtiles */,
 				DDC4BEBF152E351F00089409 /* online.png */,
 				DDC4BEC0152E351F00089409 /* online@2x.png */,
@@ -225,6 +246,8 @@
 				DDC4BEC5152E366800089409 /* OfflineLayerViewController.m */,
 				DDC4BEF0152E3EEE00089409 /* InteractiveLayerViewController.h */,
 				DDC4BEEF152E3EEE00089409 /* InteractiveLayerViewController.m */,
+				2B6F715A175E98960043A8A6 /* ShapeLayerViewController.h */,
+				2B6F715B175E98960043A8A6 /* ShapeLayerViewController.m */,
 				2B627A131756639A00284366 /* ComparisonViewController.h */,
 				2B627A141756639A00284366 /* ComparisonViewController.m */,
 				DDEF3A341522813600DE6DB0 /* Supporting Files */,
@@ -330,6 +353,12 @@
 				DDD9E7A915912CA700F29679 /* icon.png in Resources */,
 				DD9BFE28160140520011F174 /* Default-568h@2x.png in Resources */,
 				DD97C05716485EE9007C4652 /* MapBox.bundle in Resources */,
+				2B6F7162175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.dbf in Resources */,
+				2B6F7163175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shp in Resources */,
+				2B6F7164175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shx in Resources */,
+				2B6F7165175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj in Resources */,
+				2B6F7167175EABAF0043A8A6 /* shape.png in Resources */,
+				2B6F7169175EAE300043A8A6 /* shape@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +377,7 @@
 				DDA6DFBF16A6364F00D373D8 /* NSData+Base64.m in Sources */,
 				2B627A151756639A00284366 /* ComparisonViewController.m in Sources */,
 				2B627A1B1756657600284366 /* BaseViewController.m in Sources */,
+				2B6F715C175E98970043A8A6 /* ShapeLayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,7 +433,10 @@
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"",
+					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobe-Maply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/\"",
+				);
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				KEEP_PRIVATE_EXTERNS = YES;
@@ -454,7 +487,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -474,7 +507,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"",
+					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobe-Maply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/\"",
+				);
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				KEEP_PRIVATE_EXTERNS = YES;
@@ -494,7 +530,10 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"";
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"",
+					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobe-Maply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/\"",
+				);
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				KEEP_PRIVATE_EXTERNS = YES;

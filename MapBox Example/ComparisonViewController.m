@@ -79,7 +79,7 @@
         case 1:
             cell.textLabel.text = @"route-me + Maply";
             break;
-        default:
+        default:;
             break;
     }
     cell.textLabel.textColor = [UIColor whiteColor];
@@ -97,7 +97,7 @@
     
     NSMutableArray *viewControllers = [NSMutableArray array];
     
-    for (NSString *typeString in [NSArray arrayWithObjects:@"online", @"offline", @"interactive", nil])
+    for (NSString *typeString in [NSArray arrayWithObjects:@"online", @"offline", @"interactive", @"shape", nil])
     {
         Class ViewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@LayerViewController", [typeString capitalizedString]]);
         
