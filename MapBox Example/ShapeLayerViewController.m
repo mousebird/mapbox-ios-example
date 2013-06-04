@@ -71,8 +71,8 @@
                                 NSArray *countries = [allCountries splitVectors];
                                 for (MaplyVectorObject *country in countries)
                                 {
-                                    NSArray *pts = [country asCLLocationArray];
-                                    if (pts)
+                                    NSArray *loops = [country asCLLocationArrays];
+                                    for (NSArray *pts in loops)
                                     {
                                         RMShapeAnnotation *shape = [[RMPolygonAnnotation alloc] initWithMapView:mapView points:pts];
                                         // But we have to merge the shape in on the main thread
@@ -86,7 +86,7 @@
                                 // Draw the shapes with Maply
                                 // Width 4 pixels, black lines, draw on top of the base layers, and fade in over 1s
                                 // Okay, I'm just showing off with that last one
-                                [mapView.maplyViewController addVectors:@[allCountries] desc:@{kMaplyVecWidth: @(4.0), kMaplyColor: [UIColor blackColor], kMaplyDrawPriority: @(100), kMaplyDrawOffset: @(0.0), kMaplyFade: @(1.0)}];
+                                [mapView.maplyViewController addVectors:@[allCountries] desc:@{kMaplyVecWidth: @(5.0), kMaplyColor: [UIColor blackColor], kMaplyDrawPriority: @(100), kMaplyDrawOffset: @(0.0), kMaplyFade: @(1.0)}];
                             }
                         }
                    });

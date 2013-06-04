@@ -175,8 +175,6 @@
 		DDC4BEC3152E356F00089409 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2B6F7168175EAE300043A8A6 /* shape@2x.png */,
-				2B6F7166175EABAF0043A8A6 /* shape.png */,
 				2B6F715E175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.dbf */,
 				2B6F715F175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shp */,
 				2B6F7160175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.shx */,
@@ -188,6 +186,8 @@
 				DDC4BEC8152E36FF00089409 /* offline@2x.png */,
 				DDC4BECD152E38D200089409 /* interactive.png */,
 				DDC4BECE152E38D200089409 /* interactive@2x.png */,
+				2B6F7168175EAE300043A8A6 /* shape@2x.png */,
+				2B6F7166175EABAF0043A8A6 /* shape.png */,
 				DDD9E7A715912CA700F29679 /* icon.png */,
 				DDD9E7A615912CA700F29679 /* icon@2x.png */,
 				DD9BFE27160140520011F174 /* Default-568h@2x.png */,
