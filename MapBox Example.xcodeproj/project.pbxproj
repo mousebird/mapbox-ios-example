@@ -19,6 +19,7 @@
 		2B6F7165175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7161175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj */; };
 		2B6F7167175EABAF0043A8A6 /* shape.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7166175EABAF0043A8A6 /* shape.png */; };
 		2B6F7169175EAE300043A8A6 /* shape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7168175EAE300043A8A6 /* shape@2x.png */; };
+		2B6F71871760DDEC0043A8A6 /* MaplyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F71861760DDEC0043A8A6 /* MaplyMapViewController.m */; };
 		DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */; };
 		DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BF10152E455500089409 /* libz.dylib */; };
 		DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapBox.a */; };
@@ -87,6 +88,8 @@
 		2B6F7161175E9B8E0043A8A6 /* ne_110m_admin_0_map_units.prj */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ne_110m_admin_0_map_units.prj; sourceTree = "<group>"; };
 		2B6F7166175EABAF0043A8A6 /* shape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shape.png; sourceTree = "<group>"; };
 		2B6F7168175EAE300043A8A6 /* shape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape@2x.png"; sourceTree = "<group>"; };
+		2B6F71851760DDEC0043A8A6 /* MaplyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaplyMapViewController.h; sourceTree = "<group>"; };
+		2B6F71861760DDEC0043A8A6 /* MaplyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaplyMapViewController.m; sourceTree = "<group>"; };
 		DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DD96557015264A080008517A /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "MapBox-iOS-SDK/MapView/MapView.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DD9BFE27160140520011F174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 				DDC4BEEF152E3EEE00089409 /* InteractiveLayerViewController.m */,
 				2B6F715A175E98960043A8A6 /* ShapeLayerViewController.h */,
 				2B6F715B175E98960043A8A6 /* ShapeLayerViewController.m */,
+				2B6F71851760DDEC0043A8A6 /* MaplyMapViewController.h */,
+				2B6F71861760DDEC0043A8A6 /* MaplyMapViewController.m */,
 				2B627A131756639A00284366 /* ComparisonViewController.h */,
 				2B627A141756639A00284366 /* ComparisonViewController.m */,
 				DDEF3A341522813600DE6DB0 /* Supporting Files */,
@@ -378,6 +383,7 @@
 				2B627A151756639A00284366 /* ComparisonViewController.m in Sources */,
 				2B627A1B1756657600284366 /* BaseViewController.m in Sources */,
 				2B6F715C175E98970043A8A6 /* ShapeLayerViewController.m in Sources */,
+				2B6F71871760DDEC0043A8A6 /* MaplyMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

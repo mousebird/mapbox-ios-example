@@ -10,6 +10,7 @@
 #import "OfflineLayerViewController.h"
 #import "InteractiveLayerViewController.h"
 #import "ComparisonViewController.h"
+#import "MaplyMapViewController.h"
 
 @interface ComparisonViewController ()
 
@@ -65,7 +66,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -79,6 +80,9 @@
         case 1:
             cell.textLabel.text = @"route-me + Maply";
             break;
+        case 2:
+            cell.textLabel.text = @"Maply only";
+            break;
         default:;
             break;
     }
@@ -90,40 +94,73 @@
 
 #pragma mark - Table Delegate
 
+static NSString *MaplyTileSources[3] = {@"examples.map-z2effxa8",@"control-room-0.2.0",@"examples.map-zmy97flj"};
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.title = (indexPath.row == 0 ? @"route-me renderer" : @"Maply renderer");
     
-    NSMutableArray *viewControllers = [NSMutableArray array];
-    
-    for (NSString *typeString in [NSArray arrayWithObjects:@"online", @"offline", @"interactive", @"shape", nil])
+    if (indexPath.row == 2)
     {
-        Class ViewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@LayerViewController", [typeString capitalizedString]]);
+        // Fire up the Maply view controllers for this one
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        tabBarController.title = @"Maply only";
+        NSMutableArray *viewControllers = [NSMutableArray array];
         
-        BaseViewController *viewController = [[ViewControllerClass alloc] initWithNibName:nil bundle:nil];
-        switch (indexPath.row)
+        int which = 0;
+        for (NSString *typeString in [NSArray arrayWithObjects:@"online", @"offline", @"interactive", nil])
         {
-            case 0:
-            default:
-                viewController.renderingMode = RouteMeModeOld;
-                break;
-            case 1:
-                viewController.renderingMode = RouteMeModeMaply;
-                break;
+            // This option just has the one view controller
+            MaplyMapViewController *maplyViewC = [[MaplyMapViewController alloc] init];
+            maplyViewC.baseMap = MaplyTileSources[which];
+            maplyViewC.remoteBaseMap = (which == 1) ? false : true;
+
+            maplyViewC.tabBarItem = [[UITabBarItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ Layer", [typeString capitalizedString]]
+                                                                      image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", typeString]]
+                                                                        tag:0];
+            
+            [viewControllers addObject:maplyViewC];
+            which++;
         }
         
-        viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ Layer", [typeString capitalizedString]]
-                                                                  image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", typeString]]
-                                                                    tag:0];
+        tabBarController.viewControllers = viewControllers;
         
-        [viewControllers addObject:viewController];
+        
+        [self.navigationController pushViewController:tabBarController animated:YES];
+    } else {
+        // Use the combo or route-me exclusive controllers here
+        UITabBarController *tabBarController = [[UITabBarController alloc] init];
+        tabBarController.title = (indexPath.row == 0 ? @"route-me renderer" : @"Maply renderer");
+        
+        NSMutableArray *viewControllers = [NSMutableArray array];
+        
+        for (NSString *typeString in [NSArray arrayWithObjects:@"online", @"offline", @"interactive", @"shape", nil])
+        {
+            Class ViewControllerClass = NSClassFromString([NSString stringWithFormat:@"%@LayerViewController", [typeString capitalizedString]]);
+            
+            BaseViewController *viewController = [[ViewControllerClass alloc] initWithNibName:nil bundle:nil];
+            switch (indexPath.row)
+            {
+                case 0:
+                default:
+                    viewController.renderingMode = RouteMeModeOld;
+                    break;
+                case 1:
+                    viewController.renderingMode = RouteMeModeMaply;
+                    break;
+            }
+            
+            viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:[NSString stringWithFormat:@"%@ Layer", [typeString capitalizedString]]
+                                                                      image:[UIImage imageNamed:[NSString stringWithFormat:@"%@.png", typeString]]
+                                                                        tag:0];
+            
+            [viewControllers addObject:viewController];
+        }
+        
+        tabBarController.viewControllers = viewControllers;
+            
+        
+        [self.navigationController pushViewController:tabBarController animated:YES];
     }
-    
-    tabBarController.viewControllers = viewControllers;
-        
-    
-    [self.navigationController pushViewController:tabBarController animated:YES];
 }
 
 @end
