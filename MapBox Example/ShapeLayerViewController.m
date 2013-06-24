@@ -86,7 +86,7 @@
                                 // Draw the shapes with Maply
                                 // Width 4 pixels, black lines, draw on top of the base layers, and fade in over 1s
                                 // Okay, I'm just showing off with that last one
-                                [mapView.maplyViewController addVectors:@[allCountries] desc:@{kMaplyVecWidth: @(5.0), kMaplyColor: [UIColor blackColor], kMaplyDrawPriority: @(100), kMaplyDrawOffset: @(0.0), kMaplyFade: @(1.0)}];
+                                [mapView.maplyViewController addVectors:@[allCountries] desc:@{kMaplyVecWidth: @(5.0), kMaplyColor: [UIColor blackColor], kMaplyDrawPriority: @(100), kMaplyFade: @(1.0)}];
                             }
                         }
                    });
