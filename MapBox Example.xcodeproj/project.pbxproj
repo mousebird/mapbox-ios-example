@@ -20,6 +20,7 @@
 		2B6F7167175EABAF0043A8A6 /* shape.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7166175EABAF0043A8A6 /* shape.png */; };
 		2B6F7169175EAE300043A8A6 /* shape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7168175EAE300043A8A6 /* shape@2x.png */; };
 		2B6F71871760DDEC0043A8A6 /* MaplyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F71861760DDEC0043A8A6 /* MaplyMapViewController.m */; };
+		2B8EEEA317CC0B4E00B2D20B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8EEEA217CC0B4E00B2D20B /* libxml2.dylib */; };
 		DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */; };
 		DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BF10152E455500089409 /* libz.dylib */; };
 		DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapBox.a */; };
@@ -90,6 +91,7 @@
 		2B6F7168175EAE300043A8A6 /* shape@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shape@2x.png"; sourceTree = "<group>"; };
 		2B6F71851760DDEC0043A8A6 /* MaplyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaplyMapViewController.h; sourceTree = "<group>"; };
 		2B6F71861760DDEC0043A8A6 /* MaplyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaplyMapViewController.m; sourceTree = "<group>"; };
+		2B8EEEA217CC0B4E00B2D20B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DD96557015264A080008517A /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "MapBox-iOS-SDK/MapView/MapView.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DD9BFE27160140520011F174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8EEEA317CC0B4E00B2D20B /* libxml2.dylib in Frameworks */,
 				2B472FF41731B77C000507E9 /* libstdc++.dylib in Frameworks */,
 				2B472FF21731B74E000507E9 /* OpenGLES.framework in Frameworks */,
 				DDEF3A321522813600DE6DB0 /* CoreGraphics.framework in Frameworks */,
@@ -202,6 +205,7 @@
 		DDEF3A1E1522813600DE6DB0 = {
 			isa = PBXGroup;
 			children = (
+				2B8EEEA217CC0B4E00B2D20B /* libxml2.dylib */,
 				2B472FF31731B77C000507E9 /* libstdc++.dylib */,
 				2B472FF11731B74E000507E9 /* OpenGLES.framework */,
 				2B472FEE1731B740000507E9 /* CoreText.framework */,
