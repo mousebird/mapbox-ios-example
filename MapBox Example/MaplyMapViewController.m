@@ -52,12 +52,13 @@
     // Toss on the layer
     if (_remoteBaseMap)
     {
-        MaplyQuadEarthWithRemoteTiles *layer = [[MaplyQuadEarthWithRemoteTiles alloc] initWithBaseURL:
-                                                [NSString stringWithFormat:@"http://a.tiles.mapbox.com/v3/%@/",_baseMap] ext:@"png" minZoom:0 maxZoom:19];
+        MaplyRemoteTileSource *tileSource = [[MaplyRemoteTileSource alloc] initWithBaseURL:@"http://a.tiles.mapbox.com/v3/%@/" ext:@"png" minZoom:0 maxZoom:19];
+        MaplyQuadImageTilesLayer *layer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:tileSource.coordSys tileSource:tileSource];
         layer.cacheDir = thisCacheDir;
         [mapViewC addLayer:layer];
     } else {
-        MaplyQuadEarthWithMBTiles *layer = [[MaplyQuadEarthWithMBTiles alloc] initWithMbTiles:_baseMap];
+        MaplyMBTileSource *tileSource = [[MaplyMBTileSource alloc] initWithMBTiles:_baseMap];
+        MaplyQuadImageTilesLayer *layer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:tileSource.coordSys tileSource:tileSource];
         [mapViewC addLayer:layer];
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B11056C17E231AA00735C46 /* WhirlyGlobeMaplyComponent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B11056B17E231AA00735C46 /* WhirlyGlobeMaplyComponent.framework */; };
 		2B472FEF1731B740000507E9 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B472FEE1731B740000507E9 /* CoreText.framework */; };
 		2B472FF21731B74E000507E9 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B472FF11731B74E000507E9 /* OpenGLES.framework */; };
 		2B472FF41731B77C000507E9 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B472FF31731B77C000507E9 /* libstdc++.dylib */; };
@@ -74,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B11056B17E231AA00735C46 /* WhirlyGlobeMaplyComponent.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WhirlyGlobeMaplyComponent.framework; path = "MapBox-iOS-SDK/WhirlyGlobeMaplyComponent.framework"; sourceTree = "<group>"; };
 		2B472FEE1731B740000507E9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		2B472FF11731B74E000507E9 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2B472FF31731B77C000507E9 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
@@ -132,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B11056C17E231AA00735C46 /* WhirlyGlobeMaplyComponent.framework in Frameworks */,
 				2B8EEEA317CC0B4E00B2D20B /* libxml2.dylib in Frameworks */,
 				2B472FF41731B77C000507E9 /* libstdc++.dylib in Frameworks */,
 				2B472FF21731B74E000507E9 /* OpenGLES.framework in Frameworks */,
@@ -229,6 +232,7 @@
 		DDEF3A2C1522813600DE6DB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B11056B17E231AA00735C46 /* WhirlyGlobeMaplyComponent.framework */,
 				DDEF3A311522813600DE6DB0 /* CoreGraphics.framework */,
 				DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */,
 				DDEF3A2F1522813600DE6DB0 /* Foundation.framework */,
@@ -441,11 +445,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/MapBox-iOS-SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobeMaplyComponent.framework/Headers/\"",
 					"\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"",
-					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobe-Maply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/\"",
 				);
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -515,11 +523,15 @@
 		DDEF3A481522813600DE6DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/MapBox-iOS-SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobeMaplyComponent.framework/Headers/\"",
 					"\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"",
-					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobe-Maply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/\"",
 				);
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -538,11 +550,15 @@
 		DDEF3A491522813600DE6DB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/MapBox-iOS-SDK",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MapBox Example/MapBox Example-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobeMaplyComponent.framework/Headers/\"",
 					"\"$(SRCROOT)/MapBox-iOS-SDK/MapView/Map\"",
-					"\"$(SRCROOT)/MapBox-iOS-SDK/WhirlyGlobe-Maply/WhirlyGlobeSrc/WhirlyGlobe-MaplyComponent/include/\"",
 				);
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
