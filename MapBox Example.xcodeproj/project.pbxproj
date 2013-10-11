@@ -22,6 +22,7 @@
 		2B6F7169175EAE300043A8A6 /* shape@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B6F7168175EAE300043A8A6 /* shape@2x.png */; };
 		2B6F71871760DDEC0043A8A6 /* MaplyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6F71861760DDEC0043A8A6 /* MaplyMapViewController.m */; };
 		2B8EEEA317CC0B4E00B2D20B /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8EEEA217CC0B4E00B2D20B /* libxml2.dylib */; };
+		2B9BE6B31808A6C7001D9454 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9BE6B21808A6C7001D9454 /* libc++.dylib */; };
 		DD3A27EE1582A0AB00DADEFF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */; };
 		DD76D72E152E47660065DBB2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BF10152E455500089409 /* libz.dylib */; };
 		DD97C05616485E83007C4652 /* libMapBox.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDC4BEA3152E2FDE00089409 /* libMapBox.a */; };
@@ -94,6 +95,7 @@
 		2B6F71851760DDEC0043A8A6 /* MaplyMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaplyMapViewController.h; sourceTree = "<group>"; };
 		2B6F71861760DDEC0043A8A6 /* MaplyMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaplyMapViewController.m; sourceTree = "<group>"; };
 		2B8EEEA217CC0B4E00B2D20B /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		2B9BE6B21808A6C7001D9454 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		DD96557015264A080008517A /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = "MapBox-iOS-SDK/MapView/MapView.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		DD9BFE27160140520011F174 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B9BE6B31808A6C7001D9454 /* libc++.dylib in Frameworks */,
 				2B11056C17E231AA00735C46 /* WhirlyGlobeMaplyComponent.framework in Frameworks */,
 				2B8EEEA317CC0B4E00B2D20B /* libxml2.dylib in Frameworks */,
 				2B472FF41731B77C000507E9 /* libstdc++.dylib in Frameworks */,
@@ -232,6 +235,7 @@
 		DDEF3A2C1522813600DE6DB0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2B9BE6B21808A6C7001D9454 /* libc++.dylib */,
 				2B11056B17E231AA00735C46 /* WhirlyGlobeMaplyComponent.framework */,
 				DDEF3A311522813600DE6DB0 /* CoreGraphics.framework */,
 				DD3A27ED1582A0AB00DADEFF /* CoreLocation.framework */,
@@ -444,6 +448,8 @@
 		DDB867EF1551E029000E06D3 /* Ad Hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -458,10 +464,7 @@
 				INFOPLIST_FILE = "MapBox Example/MapBox Example-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				KEEP_PRIVATE_EXTERNS = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = routemetest;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -523,6 +526,8 @@
 		DDEF3A481522813600DE6DB0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/MapBox-iOS-SDK",
@@ -537,10 +542,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				KEEP_PRIVATE_EXTERNS = YES;
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = routemetest;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -550,6 +552,8 @@
 		DDEF3A491522813600DE6DB0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/MapBox-iOS-SDK",
@@ -564,10 +568,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				KEEP_PRIVATE_EXTERNS = YES;
 				OTHER_CPLUSPLUSFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = routemetest;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

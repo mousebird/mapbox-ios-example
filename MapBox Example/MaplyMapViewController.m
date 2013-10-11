@@ -54,7 +54,7 @@
     {
         MaplyRemoteTileSource *tileSource = [[MaplyRemoteTileSource alloc] initWithBaseURL:@"http://a.tiles.mapbox.com/v3/%@/" ext:@"png" minZoom:0 maxZoom:19];
         MaplyQuadImageTilesLayer *layer = [[MaplyQuadImageTilesLayer alloc] initWithCoordSystem:tileSource.coordSys tileSource:tileSource];
-        layer.cacheDir = thisCacheDir;
+        tileSource.cacheDir = thisCacheDir;
         [mapViewC addLayer:layer];
     } else {
         MaplyMBTileSource *tileSource = [[MaplyMBTileSource alloc] initWithMBTiles:_baseMap];
